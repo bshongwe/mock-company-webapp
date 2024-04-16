@@ -18,5 +18,20 @@ pipeline {
                 sh './gradlew test'
             }
         }
+	stage('Deploy') {
+            steps {
+                // TODO: will add deployment steps here
+                echo 'Deploying...'
+            }
+        }
+        stage('Deploy to Production') {
+            when {
+                branch 'master'
+            }
+            steps {
+                // TODO: will add deployment to production steps here
+                echo 'Deploying to production...'
+            }
+        }
     }
 }
